@@ -1,4 +1,4 @@
-# AI Recruitment Assistant Project
+# Transforming Business Workflows with GPT-Powered Multi-Agent Systems
 
 ## Introduction  
 This AI recruitment assistant project exemplifies how generative language models can be employed to automate and enhance key human resource functions. By leveraging multiple specialized AI agents, the system aims to streamline resume screening, candidate communication, and interview scheduling, contributing to improved efficiency and candidate experience within recruitment workflows.
