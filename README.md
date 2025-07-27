@@ -1,76 +1,100 @@
-```markdown
-# Transforming Business Workflows with GPT-Powered Multi-Agent Systems
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{listings}
+\usepackage{xcolor}
 
+\definecolor{codebg}{rgb}{0.95,0.95,0.95}
+
+\lstset{
+  backgroundcolor=\color{codebg},
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  columns=fullflexible,
+  frame=single,
+  keepspaces=true,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  showstringspaces=false,
+  keywordstyle=\color{blue}
+}
+
+\title{Transforming Business Workflows with GPT-Powered Multi-Agent Systems}
+\author{Your Name \\ \texttt{your.email@example.com}}
+\date{2025}
+
+\begin{document}
+
+\maketitle
+
+\section*{Project Overview}
 This project demonstrates how to automate HR workflows using multiple GPT-powered chat agents (Google Gemini API). The system includes:
 
-- **Resume Evaluator Agent:** Analyzes candidate resumes against key criteria.
-- **Candidate Response Agent:** Generates personalized messages based on evaluation results.
-- **Interview Scheduler Agent:** Suggests interview time slots and suitable job vacancies.
+\begin{itemize}
+    \item \textbf{Resume Evaluator Agent:} Analyzes candidate resumes against key criteria.
+    \item \textbf{Candidate Response Agent:} Generates personalized messages based on evaluation results.
+    \item \textbf{Interview Scheduler Agent:} Suggests interview time slots and suitable job vacancies.
+\end{itemize}
 
----
+\section*{Getting Started}
 
-## Getting Started
+\subsection*{Prerequisites}
+\begin{itemize}
+    \item Python 3.7+
+    \item An API key for Google Gemini / OpenAI API with access to \texttt{gemini-2.5-flash} or similar models.
+\end{itemize}
 
-### Prerequisites
-
-- Python 3.7+
-- An API key for Google Gemini / OpenAI API with access to `gemini-2.5-flash` or similar models.
-
-### Installation
-
-1. Clone the repository:
-
-```
+\subsection*{Installation}
+\begin{enumerate}
+    \item Clone the repository:
+    \begin{lstlisting}
 git clone https://github.com/yourusername/your-repo.git
 cd your-repo
-```
-
-2. Create and activate a virtual environment:
-
-```
+    \end{lstlisting}
+    
+    \item Create and activate a virtual environment:
+    \begin{lstlisting}[language=bash]
 python -m venv venv
 # On Linux/macOS:
 source venv/bin/activate
 # On Windows:
 venv\Scripts\activate
-```
-
-3. Install dependencies:
-
-```
+    \end{lstlisting}
+    
+    \item Install dependencies:
+    \begin{lstlisting}[language=bash]
 pip install -r requirements.txt
-```
-
-4. Create a `.env` file in the project root and add your API key:
-
-```
+    \end{lstlisting}
+    
+    \item Create a \texttt{.env} file in the project root and add your API key:
+    \begin{lstlisting}
 API_KEY=your_gemini_api_key_here
-```
+    \end{lstlisting}
+    
+    \textbf{Important:} Do not share or commit your \texttt{.env} file to public repositories.
+\end{enumerate}
 
-> **Important:** Do not share or commit your `.env` file to public repositories.
-
----
-
-### Usage
+\section*{Usage}
 
 Run the main script to see the multi-agent system in action:
 
-```
+\begin{lstlisting}[language=bash]
 python main.py
-```
+\end{lstlisting}
 
 This will:
+\begin{itemize}
+    \item Randomly select a sample resume.
+    \item Evaluate the resume with the Resume Evaluator Agent.
+    \item Generate a response to the candidate.
+    \item If evaluation is positive, schedule an interview and suggest suitable vacancies.
+\end{itemize}
 
-- Randomly select a sample resume.
-- Evaluate the resume with the Resume Evaluator Agent.
-- Generate a response to the candidate.
-- If evaluation is positive, schedule an interview and suggest suitable vacancies.
+\section*{Project Structure}
 
----
-
-## Project Structure
-
-```
+\begin{verbatim}
 project-root/
 │
 ├── README.md                    # This file
@@ -93,28 +117,18 @@ project-root/
     ├── test_resume_evaluator.py
     ├── test_candidate_response.py
     └── test_interview_scheduler.py
-```
+\end{verbatim}
 
----
+\section*{License}
 
-## License
+This project is licensed under the MIT License -- see the \href{LICENSE}{LICENSE} file for details.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+\section*{Acknowledgments}
 
----
+\begin{itemize}
+    \item \href{https://developers.generativeai.google/}{Google Gemini API}
+    \item OpenAI Python SDK
+    \item Inspiration from multi-agent systems research and GPT-powered automation
+\end{itemize}
 
-## Author
-
-Your Name - your.email@example.com
-
----
-
-## Acknowledgments
-
-- [Google Gemini API](https://developers.generativeai.google/)
-- OpenAI Python SDK  
-- Inspiration from multi-agent systems research and GPT-powered automation
-
-```
-
-If you want, I can help customize or expand this README with examples or additional usage instructions.
+\end{document}
