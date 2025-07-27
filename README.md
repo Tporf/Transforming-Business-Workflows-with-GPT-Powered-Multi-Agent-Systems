@@ -1,22 +1,34 @@
 # Transforming Business Workflows with GPT-Powered Multi-Agent Systems
 
-## Introduction  
-This AI recruitment assistant project exemplifies how generative language models can be employed to automate and enhance key human resource functions. By leveraging multiple specialized AI agents, the system aims to streamline resume screening, candidate communication, and interview scheduling, contributing to improved efficiency and candidate experience within recruitment workflows.
+## Introduction
+This project focuses on transforming business processes, specifically the employee recruitment process, using modern GPT models and the concept of multi-agent systems. The use of artificial intelligence (AI) enables the automation of routine yet complex stages of talent acquisition — from initial resume evaluation to interview scheduling. By integrating with the OpenAI Gemini API, the system supports intelligent interaction among multiple agents, each solving specific tasks, which contributes to increased efficiency and reduced human bias in candidate selection.
 
-## Objectives  
-The core objectives are to automate the evaluation of candidate resumes against relevant hiring criteria, generate personalized responses to candidates based on evaluation outcomes, and suggest appropriate interview time slots and job vacancies matched to the candidate’s profile. Ultimately, this reduces manual workload for recruiters and accelerates the hiring process while maintaining professionalism and engagement with candidates.
+## Objectives
+The primary goal of the project is to automate and improve the candidate evaluation process in HR, minimizing subjectivity and accelerating the processing of a large number of applications. This is achieved by creating a set of specialized agents that:
+- Analyze the relevance of a candidate’s work experience to the job opening;
+- Check for the presence of key professional skills;
+- Evaluate the level of education;
+- Generate personalized responses for candidates;
+- Suggest convenient time slots for interviews and recommend suitable vacancies based on the candidate’s profile.
 
-## Features  
-The system is composed of three sequential AI-powered agents:  
-1. A resume evaluation agent that acts as a virtual HR analyst, assessing experience relevance, possession of key skills, and education level, producing a "satisfactory" or "unsatisfactory" rating for each criterion.  
-2. A candidate response agent that, depending on the evaluation results, either crafts a welcoming message with tailored interview questions or politely informs candidates about disqualification.  
-3. An interview scheduler and vacancy recommender agent that proposes multiple interview time slots and suggests relevant job openings aligned with the candidate’s qualifications and experience.
+This approach aims to enhance decision quality and reduce HR specialists’ workload related to routine operations.
 
-## Process & Methods  
-The process begins by selecting candidate resumes from a predefined dataset to simulate incoming applications. The resume evaluator agent analyzes the resume text using guided system prompts and generates a criterion-wise assessment. This evaluation output is then passed to the recruiter agent, which applies conditional logic to decide on candidate messaging — offering interviews or rejection notices accordingly. For candidates meeting the acceptance threshold, the interview scheduling agent suggests interview times and compatible vacancies. All agents interact with a generative language model API via structured system and user prompts, allowing AI-guided natural language understanding and generation mapped to specific recruitment tasks.
+## Features
+The system consists of three main AI agents, each responsible for a separate task:
+- **Resume Analyst (HR Analyst)** — performs semantic analysis of resumes, comparing data on experience, skills, and education against predefined criteria and outputs an evaluation of “satisfactory” or “unsatisfactory” for each parameter.
+- **Recruiter (Communication Agent)** — based on the evaluation results, generates a response to the candidate: if the candidate meets most criteria, sends a welcoming message with interview questions; otherwise, politely informs of disqualification.
+- **Interview Coordinator** — proposes several time slots for interviews and suggests several job vacancies likely to match the candidate’s experience and competencies.
 
-## Structure  
-Implemented in Python, the system interacts with the OpenAI API to query a generative language model, passing role-specific system messages and user content. The modular architecture features independent functions for each agent’s logic, facilitating easy maintenance and extension. Conditional checks are employed to control workflow progression, linking evaluation outcomes to subsequent candidate engagement and scheduling steps. This design maintains clarity and scalability while enabling focused tuning of each recruitment step.
+This division facilitates scalability and modification of the system for different scenarios and business processes.
+
+## Process & Methods
+The process begins by submitting a candidate’s resume to the first agent, which uses GPT model calls to analyze the text, extracting relevant experience and skills and matching them with job requirements. The analysis output is sent to the second agent, which creates a communication message accordingly. If the candidate passes, the third agent receives the resume to propose interview times and appropriate vacancies.
+
+Implementation uses Python with the OpenAI client library, where each function represents a separate agent interacting through structured messages. This simulated multi-agent architecture allows distributing logic among agents and provides flexible sequencing of evaluation and communication steps.
+
+## Structure
+Architecturally, the system is a set of agent functions, each playing its own role and calling the GPT API with predefined system and user messages. Authorization and model access are organized through an API client with key and base URL. Application logic controls the sequence of agent execution: after evaluating the candidate, it counts the number of “satisfactory” criteria and branches accordingly — either proceeding with interview scheduling or sending a rejection notice. This modular design ensures ease of maintenance, testing, and future expansion.
+
 
 ## Setup  
 1. **Clone the repository**  
@@ -34,10 +46,9 @@ Implemented in Python, the system interacts with the OpenAI API to query a gener
    python main.py
    ```
 
+## Results
+The implementation demonstrates a fully automated preliminary recruitment cycle where resumes are processed and evaluated without human involvement, shortening processing time and reducing bias. Personalized messages improve the quality of candidate engagement by making communication more human-like and informative. The ability to propose concrete interview slots and relevant vacancies optimizes organizational parts and accelerates decision-making. The system’s flexibility allows adjusting evaluation criteria and vacancy recommendations for different industries.
 
-## Results  
-The outcome is an end-to-end automated recruitment pipeline that reads and evaluates free-text resumes, produces candidate-specific communications, and manages interview scheduling and vacancy matching. Demonstrations show a clear sequential output progression — from evaluation through candidate interaction to interview planning — validating the system’s capability to simulate real recruitment decision-making and coordination effectively.
-
-## Conclusion  
-This project demonstrates the power of generative AI in augmenting human resource procedures by automating resume screening, personalized candidate communication, and interview coordination. The modular, agent-driven approach provides a flexible, scalable framework that reduces recruiter burden, enhances candidate experience, and expedites hiring timelines. Future enhancements could include integration with applicant tracking systems, advanced resume parsing for deeper skill extraction, and syncing with real-time calendars for dynamic interview scheduling — further advancing AI’s role in intelligent recruitment solutions.
+## Conclusion
+This project serves as a compelling example of how GPT-based multi-agent systems can significantly transform business workflows. Automating and coordinating multiple specialized agents enables effective and scalable handling of complex tasks requiring multi-step analysis and decision-making. Such an approach saves resources, improves selection quality, enhances candidate satisfaction, and opens opportunities for implementing similar solutions in other business areas—from customer support to project management and beyond.
 
